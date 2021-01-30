@@ -1,40 +1,36 @@
 <template>
-	<div class="view flex flex-row-center text-grave">
+	<a class="view flex flex-row-center text-grave" v-bind:href="content.content.news_item[0].url">
 		<div class="card bg-white flex flex-column-start rounded">
 			<div class="card-header flex flex-row-between align-items-center p-1">
-				<p class="time text-normal">2021/1/28 20:54</p>
+				<p class="time text-normal">{{ dateFormat(content.update_time) }}</p>
 				<div class="operate">
 					<img src="../../public/icons/operate.png" class="icon"/>
 				</div>
 			</div>
 			<div class="card-body flex flex-row-between align-items-center px-1">
-				<h1 class="title text-dark text-normal">不打伞的苏轼</h1>
+				<h1 class="title text-dark text-normal">{{ content.content.news_item[0].title }}</h1>
 				<div class="pic">
-					<img src="../../public/icons/index-selected.png" class="cover"/>
+					<img v-bind:src="content.content.news_item[0].thumb_url" class="cover"/>
 				</div>
 			</div>
-			<div class="card-footer flex flex-row-start align-items-center p-1">
-				<div class="flex flex-row-start align-items-center">
-					<img src="../../public/icons/views.png" class="icon" />
-					<span>28</span>
-				</div>
-				<div class="flex flex-row-start align-items-center px-1">
-					<img src="../../public/icons/like.png" class="icon"/>
-					<span>2</span>
-				</div>
-				<div class="flex flex-row-start align-items-center">
-					<img src="../../public/icons/zaikan.png" class="icon"/>
-					<span>0</span>
-				</div>
-			</div>
+			
 		</div>
-	</div>
+	</a>
 </template>
 
 
 <script>
 	export default {
 		name: 'Card',
+		props: ['content'],
+		created() {
+		},
+		methods: {
+			dateFormat(time){
+				let date = new Date(time * 1000)
+				return date.getFullYear() + '-' +(date.getMonth()+1) + '-' + date.getDate()
+			}
+		},
 		data() {
 			return {
 			}
@@ -48,12 +44,12 @@
 		width: 100%;
 		.card{
 			width: 94%;
-			height: 120px;
+			height: 90px;
 			.card-header{
 				height: 20%;
 			}
 			.card-body{
-				height: 60%;
+				height: 80%;
 			}
 			.card-footer{
 				height: 20%;
