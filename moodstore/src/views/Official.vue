@@ -51,7 +51,7 @@
 			let _this = this
 			getAccessToken().then(function (response) {
 				if (response.data.access_token !== undefined){
-					getMaterial('news', 1, 6, response.data.access_token).then(function (response) {
+					getMaterial('news', 0, 6, response.data.access_token).then(function (response) {
 						_this.$data.content = response.data.item
 					})
 				}

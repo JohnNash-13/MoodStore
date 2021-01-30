@@ -25,7 +25,7 @@
 			let _this = this
 			getAccessToken().then(function (response) {
 				if (response.data.access_token !== undefined){
-					getMaterial(_this.$route.params.type, 1, 10, response.data.access_token).then(function (response) {
+					getMaterial(_this.$route.params.type, 0, 10, response.data.access_token).then(function (response) {
 						_this.$data.content = response.data.item
 					})
 				}
