@@ -20,6 +20,17 @@ a,button,input{
 }
 
 /**
+ * font-size
+ */
+.text-large{
+	font-size: 14px;
+}
+
+.text-normal{
+	font-size: 12px;
+}
+
+/**
  * 项目主色盘的样式类
  */
 .text-grave{
@@ -43,7 +54,27 @@ a,button,input{
 }
 
 .bg-default{
-	background-color: rgba(250, 250, 250, 1);
+	background-color: rgba(245, 245, 245, 1);
+}
+
+.bg-yellow{
+	/* #f7d794 0.2 */
+	background-color: #fdf6e8;
+}
+
+.bg-blue{
+	/* #778beb 0.2 */
+	background-color: #e2e6fb;
+}
+
+.bg-purple{
+	/* #786fa6 0.2 */
+	background-color: #e2e0ed;
+}
+
+.bg-pink{
+	/* #f8a5c2 0.2 */
+	background-color: #fcecf2;
 }
 
 /**
@@ -166,15 +197,35 @@ a,button,input{
  * padding / margin
  */
 .p-1{
-	padding: 5px;
-}
-
-.p-2{
 	padding: 10px;
 }
 
-.p-3{
+.px-1{
+	padding: 0px 0.625rem;
+}
+
+.py-1{
+	padding: 0.625rem 0px;
+}
+
+.p-2{
 	padding: 15px;
+}
+
+.p-3{
+	padding: 30px;
+}
+
+.m-1{
+	margin: 10px;
+}
+
+.m-2{
+	margin: 15px;
+}
+
+.m-3{
+	margin: 30px;
 }
 
 /**
@@ -185,9 +236,22 @@ a,button,input{
 	height: 20px;
 }
 
+.cover{
+	width: 2.1875rem;
+	height: 2.1875rem;
+}
+
 /**
  * border
  */
 .border-top{
 	border-top: 1px solid #E6E6E6;
+}
+
+
+/**
+ * 圆角
+ */
+.rounded{
+	border-radius: 0.5rem;
 }
