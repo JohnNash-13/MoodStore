@@ -10,6 +10,9 @@ const routes = [
 	{
 		path: '/official',
 		name: 'Official',
+		meta: {
+			keepAlive: true //设置页面是否需要使用缓存
+		},
 		component: () => import('../views/Official.vue')
 	},
 	{

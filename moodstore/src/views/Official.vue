@@ -27,6 +27,10 @@
 			<router-link to="/" class="text-grave flex flex-row-between align-items-center">查看全部</router-link>
 		</div>
 		<Card class="m-1" v-for="(item, index) in content" :key="index" v-bind:content="item"/>
+		<div class="loading flex flex-column-center align-items-center" v-if="content.length === 0">
+			<img src="../../public/icons/loading.png" class="icon" />
+			<p class="text-grave p-1">加载中</p>
+		</div>
 	</div>
 </template>
 
@@ -51,7 +55,6 @@
 				if (response.data.access_token !== undefined){
 					getMaterial('news', 1, 6, response.data.access_token).then(function (response) {
 						_this.$data.content = response.data.item
-						console.log(response.data.item)
 					})
 				}
 			})
@@ -61,6 +64,15 @@
 
 <style scoped="scoped" src="./../static/styles/milk.css"></style>
 <style scoped="scoped" lang="scss">
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	
 	.container{
 		padding-bottom: 58px;
 		.type-group{
@@ -77,6 +89,14 @@
 		}
 		.card-operate{
 			width: 92%;
+		}
+		.loading{
+			width: 100px;
+			height: 100px;
+			.icon{
+				animation: rotate 1s infinite;
+				animation-timing-function: linear;
+			}
 		}
 	}
 </style>

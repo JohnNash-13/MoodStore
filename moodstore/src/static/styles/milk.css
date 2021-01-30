@@ -153,6 +153,13 @@ a,button,input{
 	align-items: flex-end;
 }
 
+.absolute{
+	position: absolute;
+}
+
+.relative{
+	position: relative;
+}
 
 .fixed{
 	position: fixed;
