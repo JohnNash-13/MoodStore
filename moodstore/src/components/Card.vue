@@ -1,6 +1,6 @@
 <template>
 	<a class="view flex flex-row-center text-grave" v-bind:href="content.content.news_item[0].url">
-		<div class="card bg-white flex flex-column-start rounded">
+		<div class="card bg-white flex flex-column-start rounded shadow-default">
 			<div class="card-header flex flex-row-between align-items-center p-1">
 				<p class="time text-normal">{{ dateFormat(content.update_time) }}</p>
 				<div class="operate">

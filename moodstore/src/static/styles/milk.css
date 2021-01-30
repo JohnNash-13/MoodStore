@@ -219,6 +219,14 @@ a,button,input{
 	padding: 15px;
 }
 
+.px-2{
+	padding: 0px 15px;
+}
+
+.py-2{
+	padding: 15px 0px;
+}
+
 .p-3{
 	padding: 30px;
 }
@@ -227,8 +235,24 @@ a,button,input{
 	margin: 10px;
 }
 
+.mx-1{
+	margin: 0px 10px;
+}
+
+.my-1{
+	margin: 10px 0px;
+}
+
 .m-2{
 	margin: 15px;
+}
+
+.mx-2{
+	margin: 0px 15px;
+}
+
+.my-2{
+	margin: 15px 0px;
 }
 
 .m-3{
@@ -252,7 +276,7 @@ a,button,input{
  * border
  */
 .border-top{
-	border-top: 1px solid #E6E6E6;
+	border-top: 1px solid #f2f2f2;
 }
 
 
@@ -261,4 +285,25 @@ a,button,input{
  */
 .rounded{
 	border-radius: 0.5rem;
+}
+
+
+/**
+ * 阴影
+ */
+.shadow-default{
+	box-shadow: 0px 0px 6px 2px rgba(245, 245, 245 ,1);
+}
+
+/**
+ * 表单相关
+ */
+.input{
+	background:none;
+	outline:none;  
+	border: none;
+}
+
+.input:focus{
+	border: none;
 }
