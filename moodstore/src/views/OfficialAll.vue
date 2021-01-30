@@ -1,7 +1,7 @@
 <template>
 	<div class="container flex flex-column-start align-items-center">
 		<div class="operate flex flex-row-between align-items-center my-2">
-			<Search class="search" v-bind:type="$route.params.type"/>
+			<Search class="search" v-bind:type="$route.params.type" @search="search"/>
 		</div>
 		<Card class="my-1" v-for="(item, index) in content" :key="index" v-bind:content="item"/>
 		<Loading v-bind:status="content.length"/>
@@ -35,6 +35,11 @@
 			Search,
 			Card,
 			Loading
+		},
+		methods: {
+			search (content) {
+				alert(content)
+			}
 		}
 	}
 </script>

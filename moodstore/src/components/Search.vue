@@ -1,8 +1,8 @@
 <template>
-	<div class="search flex flex-row-around align-items-center rounded" v-bind:class="bgColor">
-		<input type="text" class="input text-grave text-large shadow-default" placeholder="搜索">
+	<div class="search flex flex-row-around align-items-center rounded shadow-default" v-bind:class="bgColor">
+		<input v-model="content" class="input text-grave text-large" placeholder="搜索" v-on:keyup.enter="search">
 		<div class="icon-group flex flex-row-center align-items-center">
-			<img src="../../public/icons/search.png" class="icon">
+			<img src="../../public/icons/search.png" class="icon" @click="search">
 		</div>
 	</div>
 </template>
@@ -13,7 +13,8 @@
 		props: ['type'],
 		data () {
 			return {
-				bgColor: ''
+				bgColor: '',
+				content: ''
 			}
 		},
 		created() {
@@ -25,6 +26,11 @@
 				this.$data.bgColor = 'bg-purple'
 			} else if (this.$props.type === 'voice') {
 				this.$data.bgColor = 'bg-yellow'
+			}
+		},
+		methods: {
+			search () {
+				this.$emit('search', this.$data.content)
 			}
 		}
 	}

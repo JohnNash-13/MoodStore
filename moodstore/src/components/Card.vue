@@ -10,7 +10,7 @@
 			<div class="card-body flex flex-row-between align-items-center px-1">
 				<h1 class="title text-dark text-normal">{{ content.content.news_item[0].title }}</h1>
 				<div class="pic">
-					<img v-bind:src="content.content.news_item[0].thumb_url" class="cover"/>
+					<img v-bind:src="urlFormat(content.content.news_item[0].thumb_url)" class="cover rounded"/>
 				</div>
 			</div>
 			
@@ -26,9 +26,13 @@
 		created() {
 		},
 		methods: {
-			dateFormat(time){
+			dateFormat (time) {
 				let date = new Date(time * 1000)
 				return date.getFullYear() + '-' +(date.getMonth()+1) + '-' + date.getDate()
+			},
+			
+			urlFormat (url) {
+				return url.replace('http://', 'https://')
 			}
 		},
 		data() {
