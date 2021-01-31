@@ -263,8 +263,9 @@ a,button,input{
  * 图片相关的样式
  */
 .icon{
-	width: 20px;
-	height: 20px;
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
 }
 
 .cover{

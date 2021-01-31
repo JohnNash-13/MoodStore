@@ -1,6 +1,6 @@
 <template>
 	<div class="loading flex flex-column-center align-items-center" v-if="status === 0">
-		<img src="../../public/icons/loading.png" class="icon" />
+		<img src="../../public/icons/loading.png" class="icon"/>
 		<p class="text-grave p-1">加载中</p>
 	</div>
 </template>

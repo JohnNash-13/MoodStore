@@ -26,19 +26,19 @@
 			<p class="text-dark text-normal">最新图文</p>
 			<router-link to="/official/news" class="text-grave flex flex-row-between align-items-center">查看全部</router-link>
 		</div>
-		<Card class="m-1" v-for="(item, index) in content" :key="index" v-bind:content="item"/>
+		<OfficialCard v-for="(item, index) in content" :key="index" v-bind:content="item"/>
 		<Loading v-bind:status="content.length"/>
 	</div>
 </template>
 
 <script>
-	import Card from '../components/Card.vue'
+	import OfficialCard from '../components/OfficialCard.vue'
 	import Loading from '../components/Loading.vue'
 	import { getMaterial } from '../api/Material.js'
 	export default {
 		name: 'Official',
 		components: {
-			Card,
+			OfficialCard,
 			Loading
 		},
 		data () {
