@@ -3,9 +3,7 @@
 		<div class="card bg-white flex flex-column-start rounded shadow-default">
 			<div class="card-header flex flex-row-between align-items-center p-1">
 				<p class="time text-normal">{{ dateFormat(content.update_time) }}</p>
-				<div class="operate">
-					<img src="../../public/icons/operate.png" class="icon"/>
-				</div>
+				<p class="author">{{ content.content.news_item[0].author }}</p>
 			</div>
 			<div class="card-body flex flex-row-between align-items-center px-1">
 				<h1 class="title text-dark text-normal">{{ content.content.news_item[0].title }}</h1>

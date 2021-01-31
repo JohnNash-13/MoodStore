@@ -23,7 +23,7 @@
 		},
 		created() {
 			let _this = this
-			getMaterial('news', 0, 6).then(function (response) {
+			getMaterial('news', 0, 10).then(function (response) {
 				_this.$data.content = response.data.item
 			})
 		},
@@ -41,7 +41,7 @@
 				}
 				// 临时保存防止循环出错
 				var tempContent = []
-				this.$data.content.forEach((item) => {
+				this.$data.copyContent.forEach((item) => {
 					if (item.content.news_item[0].title.indexOf(content) !== -1) {
 						tempContent.push(item)
 					}
