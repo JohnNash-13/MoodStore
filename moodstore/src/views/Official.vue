@@ -35,7 +35,6 @@
 	import Card from '../components/Card.vue'
 	import Loading from '../components/Loading.vue'
 	import { getMaterial } from '../api/Material.js'
-	import { getAccessToken } from '../api/AccessToken.js'
 	export default {
 		name: 'Official',
 		components: {
@@ -49,12 +48,8 @@
 		},
 		created () {
 			let _this = this
-			getAccessToken().then(function (response) {
-				if (response.data.access_token !== undefined){
-					getMaterial('news', 0, 6, response.data.access_token).then(function (response) {
-						_this.$data.content = response.data.item
-					})
-				}
+			getMaterial('news', 0, 6).then(function (response) {
+				_this.$data.content = response.data.item
 			})
 		}
 	}
