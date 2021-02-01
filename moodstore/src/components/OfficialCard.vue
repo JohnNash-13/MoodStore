@@ -15,8 +15,26 @@
 		</div>
 	</a>
 	<!-- 视频模块卡片样式 -->
-	<a class="view flex flex-row-center text-grave m-1" href="javascript:void(0)" v-if="$route.params.type === 'video'" @click="queryVideo(content.media_id)">
-		<p>{{ content.name }}</p>
+	<a class="video-view flex flex-row-center text-grave m-1" href="javascript:void(0)" v-if="$route.params.type === 'video'" @click="queryVideo(content.media_id)">
+		<div class="video-card shadow-default rounded">
+			<div class="card-header p-1">
+				<img v-bind:src="urlFormat(content.cover_url)" class="video-cover rounded">
+			</div>
+			<div class="card-body px-1">
+				<p class="text-dark text-normal">{{ content.name }}</p>
+			</div>
+			<div class="card-footer flex flex-row-between align-items-center p-1">
+				<p class="text-grave">{{ dateFormat(content.update_time) }}</p>
+				<div class="tags flex flex-row-between align-items-center">
+					<p class="tag bg-blue rounded text-grave" v-for="(item, index) in content.tags" :key="index">{{ item }}</p>
+				</div>
+			</div>
+		</div>
+	</a>
+	
+	<!-- 图片模块卡片样式 -->
+	<a class="video-view flex flex-row-center text-grave m-1" href="javascript:void(0)" v-if="$route.params.type === 'video'" @click="queryVideo(content.media_id)">
+		
 	</a>
 </template>
 
@@ -54,6 +72,22 @@
 
 <style scoped="scoped" src="./../static/styles/milk.css"></style>
 <style lang="scss" scoped>
+	.video-view{
+		width: 100%;
+		.video-card{
+			width: 94%;
+			.card-header{
+				.rounded{
+				}
+			}
+			.card-body{
+			}
+			.card-footer{
+				.tags{
+				}
+			}
+		}
+	}
 	.view{
 		width: 100%;
 		.card{

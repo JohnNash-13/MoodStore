@@ -54,8 +54,15 @@
 				// 临时保存防止循环出错
 				var tempContent = []
 				this.$data.copyContent.forEach((item) => {
-					if (item.content.news_item[0].title.indexOf(content) !== -1) {
-						tempContent.push(item)
+					if (this.$route.params.type === 'news'){
+						// 图文消息中的搜索
+						if (item.content.news_item[0].title.indexOf(content) !== -1) {
+							tempContent.push(item)
+						}
+					} else if (this.$route.params.type === 'video') {
+						if (item.name.indexOf(content) !== -1) {
+							tempContent.push(item)
+						}
 					}
 				})
 				if (tempContent.length === 0) {

@@ -10,9 +10,10 @@ const routes = [
 	{
 		path: '/official',
 		name: 'Official',
-		meta: {
-			keepAlive: true //设置页面是否需要使用缓存
-		},
+		// 目前页面缓存会导致不同类型content 传递给OfficialCard时返回值结构不一致的问题
+		// meta: {
+		// 	keepAlive: true //设置页面是否需要使用缓存
+		// },
 		component: () => import('../views/Official.vue')
 	},
 	{

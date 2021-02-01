@@ -1,6 +1,6 @@
 <template>
 	<div class="search flex flex-row-around align-items-center rounded shadow-default" v-bind:class="bgColor">
-		<input v-model="content" class="input text-grave text-large" placeholder="搜索" v-on:keyup.enter="search" @input="init">
+		<input v-model="content" class="input text-grave text-normal" placeholder="搜索" v-on:keyup.enter="search" @input="init">
 		<div class="icon-group flex flex-row-center align-items-center">
 			<img src="../../public/icons/search.png" class="icon" @click="search">
 		</div>
